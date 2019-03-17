@@ -21,14 +21,14 @@
 			{
 		<div class="single-post">
 			<div class="img">
-				<a href="#"><img src="~/Public/img/news/@blog.Photo" alt="latest-post"></a>
+				<a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })"><img src="~/Public/img/news/@blog.Photo" alt="latest-post"></a>
 			</div>
 
 			<div class="content">
 				<ul>
-					<li>Posted by <a href="#">Dr. @blog.Doctor.Name</a></li>
+					<li>Posted by <a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })">Dr. @blog.Doctor.Name</a></li>
 				</ul>
-				<h4><a href="#">@blog.Title</a></h4>
+				<h4><a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })">@blog.Title</a></h4>
 			</div>
 		</div>
 			}

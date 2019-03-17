@@ -9,7 +9,6 @@ namespace ProMediMvc.Controllers
 {
     public class FAQController : BaseController
     {
-		private readonly ProMediContext db = new ProMediContext();
         public ActionResult Index()
         {
 			ViewBag.FAQ = db.Faqs.ToList();

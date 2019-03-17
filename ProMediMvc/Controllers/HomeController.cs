@@ -10,8 +10,8 @@ namespace ProMediMvc.Controllers
 {
     public class HomeController : BaseController
     {
-        // GET: Home
-        public ActionResult Index()
+		// GET: Home
+		public ActionResult Index()
         {
 
 			IndexVm model = new IndexVm()
@@ -21,7 +21,8 @@ namespace ProMediMvc.Controllers
 				ProMedis = db.ProMedis.ToList(),
 				Patients = db.Patients.ToList(),
 				Departments = db.Departments.ToList(),
-				Facts = db.Facts.ToList()
+				Facts = db.Facts.ToList(),
+				Blogs = db.Blogs.OrderBy(b => b.Date).Take(4).ToList()
 			};
 
             return View(model);

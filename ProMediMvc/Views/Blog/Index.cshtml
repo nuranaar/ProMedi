@@ -1,4 +1,4 @@
-﻿
+﻿@model BlogVm
 @{
 	ViewBag.Title = "Index";
 }
@@ -28,222 +28,37 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
 				<div class="row">
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/1.jpg" alt="News Image" />
-								</a>
-							</div>
+					@foreach (Blog blog in Model.Blogs.ToList())
+					{
+					
+						<div class="col-lg-6 col-md-6">
+							<div class="single-card actical-card">
+								<div class="thumb-img">
+									<a href="#">
+										<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
+									</a>
+								</div>
 
-							<div class="caption-text">
-								<h3><a href="#">Baby Talk: Is Surrogacy An Option?</a></h3>
+								<div class="caption-text">
+									<h3><a href="#">@blog.Title</a></h3>
+									
+									<ul class="meta-tag">
+										<li class="author">
+											<img src="~/Public/img/patient/@Model.Doctors.Find(d=>d.Id==blog.DoctorId).Photo" alt="">
+											<a href="#">Dr. @Model.Doctors.Find(d => d.Id == blog.DoctorId).Name</a>
+										</li>
+										<li>@blog.Date.ToString("dd MMM, yyyy")</li>
+										<li><i class="icofont-speech-comments"></i> 30</li>
+									</ul>
 
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Jacson</a>
-									</li>
-									<li>5 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
+									<p>@blog.Decs</p>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/2.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">4 Simple Tips To Dental Patient Marketing</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Inline</a>
-									</li>
-									<li>8 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+									<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/3.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">How to Donate Medical Supplies</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Jach</a>
-									</li>
-									<li>9 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/4.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">Simple First Aid Tips For An Injured Ankle</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Jia</a>
-									</li>
-									<li>25 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/5.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">Tips for Moms to Detect Medicare Scams</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Smith</a>
-									</li>
-									<li>29 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/1.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">Baby Talk: Is Surrogacy An Option?</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Jacson</a>
-									</li>
-									<li>5 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/2.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">4 Simple Tips To Dental Patient Marketing</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Inline</a>
-									</li>
-									<li>8 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6">
-						<div class="single-card actical-card">
-							<div class="thumb-img">
-								<a href="#">
-									<img src="~/Public/img/news/3.jpg" alt="News Image" />
-								</a>
-							</div>
-
-							<div class="caption-text">
-								<h3><a href="#">How to Donate Medical Supplies</a></h3>
-
-								<ul class="meta-tag">
-									<li class="author">
-										<img src="~/Public/img/patient/1.jpg" alt="">
-										<a href="#">Dr. Jach</a>
-									</li>
-									<li>9 Jan, 2019</li>
-									<li><i class="icofont-speech-comments"></i> 30</li>
-								</ul>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-								<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-							</div>
-						</div>
-					</div>
-
+					}
 					<div class="col-lg-12 col-md-12">
 						<div class="pagination-area">
 							<nav aria-label="Page navigation">
@@ -260,7 +75,6 @@
 					</div>
 				</div>
 			</div>
-
 			@Html.Partial("_Widget")
 		</div>
 	</div>

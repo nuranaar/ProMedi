@@ -232,130 +232,34 @@
 			</div>
 
 			<div class="latest-news-carousel owl-carousel owl-theme owl-theme-2">
-				<div class="single-card actical-card">
-					<div class="thumb-img">
-						<a href="#">
-							<img src="~/Public/img/news/1.jpg" alt="News Image" />
-						</a>
+				@foreach (Blog blog in Model.Blogs.ToList())
+				{
+					<div class="single-card actical-card">
+						<div class="thumb-img">
+							<a href="@Url.Action("detail","blog",new {Slug= blog.Slug })">
+								<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
+							</a>
+						</div>
+
+						<div class="caption-text">
+							<h3><a href="#">@blog.Title</a></h3>
+
+							<ul class="meta-tag">
+								<li class="author">
+									<img src="~/Public/img/patient/@blog.Doctor.Photo" alt="">
+									<a href="#">Dr. @blog.Doctor.Name</a>
+								</li>
+								<li>@blog.Date.ToString("dd MMM, yyyy")</li>
+								<li><i class="icofont-speech-comments"></i> 30</li>
+							</ul>
+
+							<p>@blog.Decs</p>
+
+							<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+						</div>
 					</div>
+				}
 
-					<div class="caption-text">
-						<h3><a href="#">Baby Talk: Is Surrogacy An Option?</a></h3>
-
-						<ul class="meta-tag">
-							<li class="author">
-								<img src="~/Public/img/patient/1.jpg" alt="">
-								<a href="#">Dr. Jacson</a>
-							</li>
-							<li>5 Jan, 2019</li>
-							<li><i class="icofont-speech-comments"></i> 30</li>
-						</ul>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-					</div>
-				</div>
-
-				<div class="single-card actical-card">
-					<div class="thumb-img">
-						<a href="#">
-							<img src="~/Public/img/news/2.jpg" alt="News Image" />
-						</a>
-					</div>
-
-					<div class="caption-text">
-						<h3><a href="#">4 Simple Tips To Dental Patient Marketing</a></h3>
-
-						<ul class="meta-tag">
-							<li class="author">
-								<img src="~/Public/img/patient/1.jpg" alt="">
-								<a href="#">Dr. Jack</a>
-							</li>
-							<li>7 Jan, 2019</li>
-							<li><i class="icofont-speech-comments"></i> 30</li>
-						</ul>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-					</div>
-				</div>
-
-				<div class="single-card actical-card">
-					<div class="thumb-img">
-						<a href="#">
-							<img src="~/Public/img/news/3.jpg" alt="News Image" />
-						</a>
-					</div>
-
-					<div class="caption-text">
-						<h3><a href="#">How to Donate Medical Supplies</a></h3>
-
-						<ul class="meta-tag">
-							<li class="author">
-								<img src="~/Public/img/patient/1.jpg" alt="">
-								<a href="#">Dr. Tom</a>
-							</li>
-							<li>8 Jan, 2019</li>
-							<li><i class="icofont-speech-comments"></i> 30</li>
-						</ul>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-					</div>
-				</div>
-
-				<div class="single-card actical-card">
-					<div class="thumb-img">
-						<a href="#">
-							<img src="~/Public/img/news/4.jpg" alt="News Image" />
-						</a>
-					</div>
-
-					<div class="caption-text">
-						<h3><a href="#">Simple First Aid Tips For An Injured Ankle</a></h3>
-
-						<ul class="meta-tag">
-							<li class="author">
-								<img src="~/Public/img/patient/1.jpg" alt="">
-								<a href="#">Dr. Jaci</a>
-							</li>
-							<li>15 Jan, 2019</li>
-							<li><i class="icofont-speech-comments"></i> 30</li>
-						</ul>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-					</div>
-				</div>
-
-				<div class="single-card actical-card">
-					<div class="thumb-img">
-						<a href="#">
-							<img src="~/Public/img/news/5.jpg" alt="News Image" />
-						</a>
-					</div>
-
-					<div class="caption-text">
-						<h3><a href="#">Tips for Moms to Detect Medicare Scams</a></h3>
-
-						<ul class="meta-tag">
-							<li class="author">
-								<img src="~/Public/img/patient/1.jpg" alt="">
-								<a href="#">Dr. Alert</a>
-							</li>
-							<li>25 Jan, 2019</li>
-							<li><i class="icofont-speech-comments"></i> 30</li>
-						</ul>
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-
-						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
