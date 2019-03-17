@@ -16,6 +16,11 @@ namespace ProMediMvc.Controllers
 		{
 			ViewBag.Setting = db.Settings.First();
 			ViewBag.Department = db.Departments.ToList();
+			ViewBag.DocList = db.Doctors.ToList();
+			ViewBag.Spesiality = db.Specialities.ToList();
+			ViewBag.Tags = db.BlogTags.ToList();
+			ViewBag.Cats = db.BlogCats.ToList();
+			ViewBag.BlogList = db.Blogs.Include("Doctor").OrderByDescending(b => b.Date).Take(4).ToList();
 		}
 
     }

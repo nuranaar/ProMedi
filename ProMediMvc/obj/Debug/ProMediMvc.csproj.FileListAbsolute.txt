@@ -86,3 +86,6 @@ C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migration
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.csproj.GenerateResource.cache
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.DelDepInfo.resources
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.DelServicesIndex.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddSliderTable.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddVideoUrl.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddVideoText.resources

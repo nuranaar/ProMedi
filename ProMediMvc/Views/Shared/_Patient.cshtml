@@ -1,0 +1,28 @@
+﻿
+<section class="patient-feedback ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<h2>Patient Feedback</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="feedback-carousel owl-carousel owl-theme owl-theme-2">
+			@foreach (Patient patient in Model)
+			{
+				<div class="single-feedback">
+					<div class="feedback-text">
+						<i class="icofont-quote-right"></i>
+
+						<p>@patient.Feedback</p>
+
+						<div class="profile-content">
+							<img src="~/Public/img/patient/@patient.Photo" alt="Patient" />
+							<h4>@patient.Fullname</h4>
+						</div>
+					</div>
+				</div>
+			}
+
+		</div>
+	</div>
+</section>

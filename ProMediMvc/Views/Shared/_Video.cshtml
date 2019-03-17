@@ -1,0 +1,26 @@
+﻿@{ 
+	Setting setting = ViewBag.Setting as Setting;
+}
+<section class="video-section ptb-100">
+	<div class="container">
+		<div class="section-title white-title">
+			<h2>Watch Our Video</h2>
+			<p>@setting.VideoText</p>
+		</div>
+
+		<div class="video-content mb-minus-330">
+			<div class="d-table">
+				<div class="d-tablecell">
+					<div class="sonar-wrapper">
+						<div class="sonar-emitter">
+							<div class="sonar-wave"></div>
+							<a href="@setting.VideoUrl" class="play-video popup-youtube">
+								<i class="icofont-play"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

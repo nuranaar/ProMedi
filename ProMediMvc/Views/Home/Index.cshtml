@@ -1,7 +1,380 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@model IndexVm
+	@{
+		ViewBag.Title = "Index";
+	}
 
-<h2>Index</h2>
+	<!-- Hero Slider -->
+	<div class="hero-slider owl-carousel owl-theme">
 
+
+		@foreach (Slider slider in Model.Sliders.ToList())
+		{
+			<div class="hs-item hs-item-@slider.Photo">
+				<div class="d-table">
+					<div class="d-tablecell">
+						<div class="hero-text text-center">
+							<h1>@slider.Title</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
+
+	</div>
+	<!-- End Hero Slider -->
+	<!-- Services -->
+	<div class="services-area services-box">
+		<div class="container">
+			<div class="row">
+
+
+
+				@foreach (ProMedi pro in Model.ProMedis.ToList())
+				{
+					<div class="col-md-4 col-lg-4">
+						<div class="single-card">
+							<div class="thumb-img">
+								<img src="~/Public/img/services/@pro.Photo" alt="Service Image" />
+							</div>
+
+							<div class="caption-text text-center">
+								<h3>@pro.Title</h3>
+								<p>@pro.Desc</p>
+							</div>
+						</div>
+					</div>
+				}
+
+			</div>
+		</div>
+	</div>
+	<!-- End Services -->
+	<!-- About Section -->
+	<section class="about-section ptb-100">
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-md-12 col-lg-6">
+					<div class="about-us-img">
+						<img src="~/Public/img/@Model.About.Photo" alt="About Us Image">
+					</div>
+				</div>
+
+				<div class="col-md-12 col-lg-6">
+					<div class="about-us-text">
+						<h2>@Model.About.Title</h2>
+@Html.Raw(Model.About.Text)
+						<a href="#" class="default-btn">About Us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End about section -->
+	<!-- Call To Action -->
+	<section class="call-to-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-9">
+					<div class="call-to-action-text">
+						<i class="icofont-first-aid"></i>
+						<h3>Health Care Center</h3>
+						<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-lg-3">
+					<a href="#" class="default-btn">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Call To Action -->
+	<!-- Departments section -->
+	<section class="department-section pt-100 pb-50 gray-bg">
+		<div class="container">
+			<div class="section-title">
+				<h2>Our Departments</h2>
+				<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+
+			<div class="row">
+
+				@foreach (Department department in Model.Departments.ToList())
+				{
+					<div class="col-md-4 col-lg-3">
+						<div class="single-department">
+							<i class="icofont-@department.Icon"></i>
+							<h3>@department.Name</h3>
+							<p>@department.Desc</p>
+						</div>
+					</div>
+				}
+
+
+			</div>
+		</div>
+	</section>
+	<!-- End Departments section -->
+	<!-- Video Section -->
+@Html.Partial("_Video")
+	<!-- End Video Section -->
+	<!-- Counter section -->
+@Html.Partial("_Fact", Model.Facts)
+	<!-- End counter section -->
+	<!-- Expert Doctors -->
+@Html.Partial("_DocList")
+	<!-- Edn Expert Doctors -->
+	<!-- Appointment Area -->
+	<div class="appointment-area">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-lg-5 p-0">
+					<div class="contant-number">
+						<h3><i class="icofont-phone"></i> 1-604-555-5555</h3>
+					</div>
+				</div>
+				<div class="col-md-12 col-lg-7 p-0">
+					<div class="appointment-form">
+						<h2 class="title">Make an Appointment</h2>
+						<form>
+							<div class="row">
+								<div class="col-md-6 col-lg-6 pr-10">
+									<div class="form-group">
+										<input type="text" class="form-control" id="id_name" placeholder="Name">
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 pl-10">
+									<div class="form-group">
+										<input type="email" class="form-control" id="id_email" placeholder="Email">
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 pr-10">
+									<div class="form-group">
+										<input type="text" class="form-control" id="id_phone_number" placeholder="Phone Number">
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 pl-10">
+									<div class="form-group">
+										<select class="form-control">
+											<option>Department</option>
+											<option>Cardiology</option>
+											<option>Neurology</option>
+											<option>Orthopedics</option>
+											<option>Radiology</option>
+											<option>Surgery</option>
+											<option>Urology</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 pr-10">
+									<div class="form-group">
+										<select class="form-control">
+											<option>Doctor</option>
+											<option>Dr. Anym Jackson</option>
+											<option>Dr. Mark Jacobson</option>
+											<option>Dr. Alex Davidson</option>
+											<option>Dr. Jaka Alex</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-lg-6 pl-10">
+									<div class="form-group">
+										<input class="form-control" id="datepicker" placeholder="Booking Date">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+							</div>
+
+							<button type="submit" class="btn book-now-btn">Book Now</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Appointment Area -->
+	<!-- Patient Feedback -->
+@Html.Partial("_Patient", Model.Patients)
+	<!-- End Patient Feedback -->
+	<!-- CTA Area -->
+	<div class="cta-area gray-bg ptb-100">
+		<div class="container">
+			<div class="cta-text-content">
+				<h3>We are constantly evaluating and implementing ways to improve patient safety.</h3>
+				<p>Please speak up when you have questions or concerns.</p>
+
+				<div class="cta-contant">
+					<i class="icofont-phone"></i>
+					1-604-555-5555
+				</div>
+			</div>
+
+			<div class="cta-doctor-img">
+				<img src="~/Public/img/doctor.png" alt="Doctor">
+			</div>
+		</div>
+	</div>
+	<!-- CTA Area -->
+	<!-- Latest news section -->
+	<section class="latest-news ptb-100 pb-70">
+		<div class="container">
+			<div class="section-title">
+				<h2>Latest News</h2>
+				<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
+
+			<div class="latest-news-carousel owl-carousel owl-theme owl-theme-2">
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="#">
+							<img src="~/Public/img/news/1.jpg" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="#">Baby Talk: Is Surrogacy An Option?</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/1.jpg" alt="">
+								<a href="#">Dr. Jacson</a>
+							</li>
+							<li>5 Jan, 2019</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="#">
+							<img src="~/Public/img/news/2.jpg" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="#">4 Simple Tips To Dental Patient Marketing</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/1.jpg" alt="">
+								<a href="#">Dr. Jack</a>
+							</li>
+							<li>7 Jan, 2019</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="#">
+							<img src="~/Public/img/news/3.jpg" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="#">How to Donate Medical Supplies</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/1.jpg" alt="">
+								<a href="#">Dr. Tom</a>
+							</li>
+							<li>8 Jan, 2019</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="#">
+							<img src="~/Public/img/news/4.jpg" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="#">Simple First Aid Tips For An Injured Ankle</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/1.jpg" alt="">
+								<a href="#">Dr. Jaci</a>
+							</li>
+							<li>15 Jan, 2019</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="#">
+							<img src="~/Public/img/news/5.jpg" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="#">Tips for Moms to Detect Medicare Scams</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/1.jpg" alt="">
+								<a href="#">Dr. Alert</a>
+							</li>
+							<li>25 Jan, 2019</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+						<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Latest news section -->
+	<!-- Our Newsletter -->
+	<section class="newsletter-section ptb-100">
+		<div class="container">
+			<div class="section-title white-title">
+				<h2>Join Our Newsletter</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+			</div>
+
+			<div class="subscribe-from">
+				<form class="newsletter-form" data-toggle="validator">
+					<input type="email" class="form-control" placeholder="Enter email" name="EMAIL" required autocomplete="off">
+					<button type="submit" class="btn submit-btn"><i class="icofont-location-arrow"></i></button>
+					<div id="validator-newsletter" class="form-result"></div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!-- End Our Newsletter -->

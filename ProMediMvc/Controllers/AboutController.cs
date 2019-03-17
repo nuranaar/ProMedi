@@ -15,11 +15,12 @@ namespace ProMediMvc.Controllers
         {
 			AboutVm model = new AboutVm()
 			{
-				About = db.Abouts.FirstOrDefault(),
+				About = db.Abouts.Find(1),
 				Patients = db.Patients.ToList(),
 				Facts = db.Facts.ToList(),
 				Doctors = db.Doctors.ToList(),
-				ProMedis = db.ProMedis.ToList()
+				ProMedis = db.ProMedis.ToList(),
+				Specialities = db.Specialities.ToList()
 			};
             return View(model);
         }

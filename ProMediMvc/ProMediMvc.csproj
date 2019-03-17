@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MaxLenghtAttribute.cs" />
     <Compile Include="Migrations\201903160804145_Init.cs" />
     <Compile Include="Migrations\201903160804145_Init.Designer.cs">
       <DependentUpon>201903160804145_Init.cs</DependentUpon>
@@ -146,6 +148,18 @@
     <Compile Include="Migrations\201903161015481_DelServicesIndex.cs" />
     <Compile Include="Migrations\201903161015481_DelServicesIndex.Designer.cs">
       <DependentUpon>201903161015481_DelServicesIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903170745349_AddSliderTable.cs" />
+    <Compile Include="Migrations\201903170745349_AddSliderTable.Designer.cs">
+      <DependentUpon>201903170745349_AddSliderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903170856070_AddVideoUrl.cs" />
+    <Compile Include="Migrations\201903170856070_AddVideoUrl.Designer.cs">
+      <DependentUpon>201903170856070_AddVideoUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903170900183_AddVideoText.cs" />
+    <Compile Include="Migrations\201903170900183_AddVideoText.Designer.cs">
+      <DependentUpon>201903170900183_AddVideoText.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -161,11 +175,13 @@
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Slider.cs" />
     <Compile Include="Models\SpecExpert.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequiredAttribute.cs" />
     <Compile Include="ViewModels\AboutVm.cs" />
+    <Compile Include="ViewModels\IndexVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -259,6 +275,12 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\FAQ\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Shared\_Fact.cshtml" />
+    <Content Include="Views\Shared\_Patient.cshtml" />
+    <Content Include="Views\Shared\_DocList.cshtml" />
+    <Content Include="Views\Shared\_Video.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Shared\_Widget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -272,6 +294,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903161015481_DelServicesIndex.resx">
       <DependentUpon>201903161015481_DelServicesIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903170745349_AddSliderTable.resx">
+      <DependentUpon>201903170745349_AddSliderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903170856070_AddVideoUrl.resx">
+      <DependentUpon>201903170856070_AddVideoUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903170900183_AddVideoText.resx">
+      <DependentUpon>201903170900183_AddVideoText.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

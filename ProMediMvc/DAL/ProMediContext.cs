@@ -28,6 +28,7 @@ namespace ProMediMvc.DAL
 		public DbSet<Setting> Settings { get; set; }
 		public DbSet<Speciality> Specialities { get; set; }
 		public DbSet<SpecExpert> SpecExperts { get; set; }
+		public DbSet<Slider> Sliders { get; set; }
 		public DbSet<Expert> Experts { get; set; }
 		public DbSet<ProMedi> ProMedis { get; set; }
 	}

@@ -56,6 +56,12 @@ namespace ProMediMvc.Models
 		[Required]
 		public string GooglePlus { get; set; }
 
+		[Required]
+		public string VideoUrl { get; set; }
+
+		[Required]
+		public string VideoText { get; set; }
+
 		[StringLength(50)]
 		public string Lat { get; set; }
 

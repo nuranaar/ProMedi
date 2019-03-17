@@ -6,18 +6,20 @@ using ProMediMvc.Models;
 
 namespace ProMediMvc.ViewModels
 {
-	public class AboutVm
+	public class IndexVm
 	{
-		public About About { get; set; }
-
-		public List<Patient> Patients { get; set; }
+		public List<Slider> Sliders { get; set; }
 
 		public List<ProMedi> ProMedis { get; set; }
 
-		public List<Doctor> Doctors { get; set; }
+		public List<Department> Departments { get; set; }
 
 		public List<Fact> Facts { get; set; }
 
-		public List<Speciality> Specialities { get; set; }
+		public List<Patient> Patients { get; set; }
+
+		public List<Blog> Blogs { get; set; }
+
+		public About About { get; set; }
 	}
 }

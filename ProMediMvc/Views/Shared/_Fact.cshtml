@@ -1,0 +1,19 @@
+﻿
+<div class="counter-section pt-100 pb-70 pt-330">
+	<div class="container">
+		<div class="row">
+			@foreach (Fact fact in Model)
+			{
+				<div class="col-sm-6 col-md-6 col-lg-3">
+					<div class="single-counter">
+						<i class="icofont-@fact.Icon"></i>
+						<h3 class="counter">@fact.Value</h3>
+						<p>@fact.Key</p>
+					</div>
+				</div>
+
+			}
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+﻿@{
+	Setting setting = ViewBag.Setting as Setting;
+	List<Doctor> doctor = ViewBag.DocList as List<Doctor>;
+	List<Speciality> speciality = ViewBag.Spesiality as List<Speciality>;
+
+}
+<section class="expert-doctors ptb-100 gray-bg pb-70">
+	<div class="container">
+		<div class="section-title">
+			<h2>Our Expert Doctors</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="expert-doctors-carousel owl-carousel owl-theme owl-theme-2">
+
+			@foreach (Doctor doc in doctor)
+			{
+				<div class="single-card">
+					<div class="thumb-img">
+						<img src="~/Public/img/doctors/@doc.Photo" alt="Doctor Image" />
+						<div class="hover-social">
+							<div class="d-table">
+								<div class="d-tablecell">
+									<ul>
+										@if (setting.Twitter != null)
+										{
+											<li><a href="https:// @setting.Twitter .com" target="_blank"><i class="icofont-@setting.Twitter"></i></a></li>
+										}
+										@if (setting.Facebook != null)
+										{
+											<li><a href="https:// @setting.Facebook .com" target="_blank"><i class="icofont-@setting.Facebook"></i></a></li>
+										}
+										@if (setting.LinkedIn != null)
+										{
+											<li><a href="https:// @setting.LinkedIn .com" target="_blank"><i class="icofont-@setting.LinkedIn"></i></a></li>
+										}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="caption-text text-center">
+						<h3>Dr. @doc.Name @doc.Surname</h3>
+						<span class="designation mb-10">
+							@speciality.FirstOrDefault(s => s.DepartmentId == doc.DepartmentId).Name
+						</span>
+						<p>@doc.Desc</p>
+					</div>
+				</div>
+			}
+
+
+		</div>
+	</div>
+</section>
