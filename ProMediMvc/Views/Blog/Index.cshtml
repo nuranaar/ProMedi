@@ -30,18 +30,18 @@
 				<div class="row">
 					@foreach (Blog blog in Model.Blogs.ToList())
 					{
-					
+
 						<div class="col-lg-6 col-md-6">
 							<div class="single-card actical-card">
 								<div class="thumb-img">
-									<a href="#">
+									<a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })">
 										<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
 									</a>
 								</div>
 
 								<div class="caption-text">
-									<h3><a href="#">@blog.Title</a></h3>
-									
+									<h3><a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })">@blog.Title</a></h3>
+
 									<ul class="meta-tag">
 										<li class="author">
 											<img src="~/Public/img/patient/@Model.Doctors.Find(d=>d.Id==blog.DoctorId).Photo" alt="">
@@ -53,7 +53,7 @@
 
 									<p>@blog.Decs</p>
 
-									<a href="#" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+									<a href="@Url.Action("detail", "blog", new {Slug=blog.Slug })" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
 								</div>
 							</div>
 						</div>

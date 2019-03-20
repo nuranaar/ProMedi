@@ -130,8 +130,11 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\FAQController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="DAL\ProMediContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +185,8 @@
     <Compile Include="RequiredAttribute.cs" />
     <Compile Include="ViewModels\AboutVm.cs" />
     <Compile Include="ViewModels\BlogVm.cs" />
+    <Compile Include="ViewModels\DepartmentVm.cs" />
+    <Compile Include="ViewModels\DoctorVm.cs" />
     <Compile Include="ViewModels\IndexVm.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +288,10 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Shared\_Widget.cshtml" />
     <Content Include="Views\Blog\Detail.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Department\Detail.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Doctor\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

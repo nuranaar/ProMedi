@@ -1,0 +1,89 @@
+﻿@model DoctorVm
+@{
+	Setting setting = ViewBag.Setting as Setting;
+	ViewBag.Title = "Detail";
+}
+
+
+<!-- Page Title -->
+<div class="page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-7">
+				<h2>Doctor</h2>
+			</div>
+
+			<div class="col-md-6 col-lg-5">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>Doctor</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Page Title -->
+<!-- Doctors Details section -->
+<section class="doctors-details ptb-100">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="doctors-details">
+					<div class="img">
+						<img src="assets/img/slider/@Model.Doctor.Photo" alt="department-details">
+					</div>
+
+					<div class="doctors-desc">
+						<h3>@Model.Doctor.Name @Model.Doctor.Surname</h3>
+@Html.Raw(Model.Doctor.Text)
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-12">
+				<div class="doctors-sidebar">
+					<div class="doctors-info">
+						<h4>Profile Details</h4>
+						<ul>
+							<li>Address: <span>1085 Valencia St, CA 94110</span></li>
+							<li>Phone: <span>@Model.Doctor.Phone</span></li>
+							<li>Email: <span><a href="#">example@example.com</a></span></li>
+							<li>Speciality: <span>@Model.Speciality.Name</span></li>
+							<li>Degree: <span>@Model.Doctor.Degree</span></li>
+							<li>Expert in: <span>
+								  @foreach (SpecExpert specExpert in Model.SpecExperts.ToList())
+								  {
+									  @specExpert.Expert.Name;
+								  }
+								  </span></li>
+							<li>Categories: <span><a href="#">@Model.Doctor.Department.Name</a></span></li>
+						</ul>
+					</div>
+
+					<div class="doctors-social">
+						<ul>
+							@if (setting.Twitter != null)
+							{
+								<li><a href="https:// @setting.Twitter .com" target="_blank"><i class="icofont-@setting.Twitter"></i></a></li>
+							}
+							@if (setting.Facebook != null)
+							{
+								<li><a href="https:// @setting.Facebook .com" target="_blank"><i class="icofont-@setting.Facebook"></i></a></li>
+							}
+							@if (setting.LinkedIn != null)
+							{
+								<li><a href="https:// @setting.LinkedIn .com" target="_blank"><i class="icofont-@setting.LinkedIn"></i></a></li>
+							}
+							@if (setting.Instagram != null)
+							{
+								<li><a href="https:// @setting.Instagram .com" target="_blank"><i class="icofont-@setting.Instagram"></i></a></li>
+							}
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Doctors Details section -->

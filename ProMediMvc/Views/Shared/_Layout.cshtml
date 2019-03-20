@@ -129,14 +129,10 @@
 									Departments
 								</a>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="department-details.html">Cardiology</a>
-									<a class="dropdown-item" href="department-details.html">Gynecology</a>
-									<a class="dropdown-item" href="department-details.html">Neurology</a>
-									<a class="dropdown-item" href="department-details.html">Orthopedics</a>
-									<a class="dropdown-item" href="department-details.html">Gastrology</a>
-									<a class="dropdown-item" href="department-details.html">Pulmonology</a>
-									<a class="dropdown-item" href="department-details.html">Laboratory</a>
-									<a class="dropdown-item" href="department-details.html">Urology</a>
+									@foreach (var depart in departments)
+									{
+										<a class="dropdown-item" href="@Url.Action("detail", "department", new {Slug=depart.Slug })">@depart.Name</a>
+									}
 								</div>
 							</li>
 
@@ -186,7 +182,25 @@
 	@RenderBody()
 
 
+	<!-- Call To Action -->
+	<section class="call-to-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="call-to-action-text">
+						<i class="icofont-first-aid"></i>
+						<h3>Health Care Center</h3>
+						<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+					</div>
+				</div>
 
+				<div class="col-lg-3">
+					<a href="#" class="default-btn">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Call To Action -->
 	<!-- Footer -->
 	<footer class="pt-100 pb-50">
 		<div class="container">
@@ -228,7 +242,7 @@
 						<ul>
 							@foreach (var depart in departments)
 							{
-								<li><a href="#">@depart.Name</a></li>
+								<li><a href="@Url.Action("detail", "department", new {Slug=depart.Slug })">@depart.Name</a></li>
 							}
 						</ul>
 					</div>
