@@ -3,7 +3,7 @@
 	Setting setting = ViewBag.Setting as Setting;
 	List<Doctor> doctor = ViewBag.DocList as List<Doctor>;
 	List<Speciality> speciality = ViewBag.Spesiality as List<Speciality>;
-	
+
 	ViewBag.Title = "Index";
 }
 
@@ -17,7 +17,7 @@
 
 			<div class="col-md-6 col-lg-5">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="@Url.Action("index","home")">Home</a></li>
 					<li>Doctors</li>
 				</ul>
 			</div>
@@ -34,7 +34,7 @@
 				<div class="col-lg-4 col-md-6">
 					<div class="single-card">
 						<div class="thumb-img">
-							<a href="@Url.Action("detail", "doctor", new {Slug=doc.Slug })"><img src="~/Public/img/doctors/@doc.Photo" alt="Doctor Image" /></a>
+							<img src="~/Public/img/doctors/@doc.Photo" alt="Doctor Image" />
 
 							<div class="hover-social">
 								<div class="d-table">
@@ -59,7 +59,9 @@
 						</div>
 
 						<div class="caption-text text-center">
-							<h3>Dr. @doc.Name @doc.Surname</h3>
+							<a href="@Url.Action("detail", "doctor", new {Slug=doc.Slug })">
+								<h3>Dr. @doc.Name @doc.Surname</h3>
+							</a>
 							<span class="designation mb-10">
 								@speciality.FirstOrDefault(s => s.DepartmentId == doc.DepartmentId).Name
 
@@ -75,3 +77,22 @@
 	</div>
 </section>
 <!-- Edn Expert Doctors -->
+<!-- Call To Action -->
+<section class="call-to-action">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="call-to-action-text">
+					<i class="icofont-first-aid"></i>
+					<h3>Health Care Center</h3>
+					<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<a href="@Url.Action("index","contact")" class="default-btn">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Call To Action -->

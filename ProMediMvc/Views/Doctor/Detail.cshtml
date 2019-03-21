@@ -2,6 +2,7 @@
 @{
 	Setting setting = ViewBag.Setting as Setting;
 	ViewBag.Title = "Detail";
+	int count = 0;
 }
 
 
@@ -15,7 +16,7 @@
 
 			<div class="col-md-6 col-lg-5">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="@Url.Action("index","home")">Home</a></li>
 					<li>Doctor</li>
 				</ul>
 			</div>
@@ -30,12 +31,12 @@
 			<div class="col-lg-8 col-md-12">
 				<div class="doctors-details">
 					<div class="img">
-						<img src="assets/img/slider/@Model.Doctor.Photo" alt="department-details">
+						<img src="~/Public/img/doctors/@Model.Doctor.Photo" alt="department-details">
 					</div>
 
 					<div class="doctors-desc">
 						<h3>@Model.Doctor.Name @Model.Doctor.Surname</h3>
-@Html.Raw(Model.Doctor.Text)
+						@Html.Raw(Model.Doctor.Text)
 					</div>
 				</div>
 			</div>
@@ -50,13 +51,16 @@
 							<li>Email: <span><a href="#">example@example.com</a></span></li>
 							<li>Speciality: <span>@Model.Speciality.Name</span></li>
 							<li>Degree: <span>@Model.Doctor.Degree</span></li>
-							<li>Expert in: <span>
-								  @foreach (SpecExpert specExpert in Model.SpecExperts.ToList())
-								  {
-									  @specExpert.Expert.Name;
-								  }
-								  </span></li>
-							<li>Categories: <span><a href="#">@Model.Doctor.Department.Name</a></span></li>
+							<li>
+								Expert in:
+
+								@foreach (SpecExpert specExpert in Model.SpecExperts.ToList())
+								{<span>
+										@specExpert.Expert.Name <br />
+									</span>
+								}
+							</li>
+							<li>Categories: <span><a href="@Url.Action("detail","department", new {Slug=Model.Doctor.Department.Slug })">@Model.Doctor.Department.Name</a></span></li>
 						</ul>
 					</div>
 
@@ -87,3 +91,22 @@
 	</div>
 </section>
 <!-- End Doctors Details section -->
+<!-- Call To Action -->
+<section class="call-to-action">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="call-to-action-text">
+					<i class="icofont-first-aid"></i>
+					<h3>Health Care Center</h3>
+					<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<a href="@Url.Action("index","contact")" class="default-btn">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Call To Action -->

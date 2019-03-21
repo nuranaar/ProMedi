@@ -100,7 +100,7 @@
 		<div class="navbar-container header-sticky">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="@Url.Action("index","home")">
 						<img src="~/Public/img/logo.png" alt="Logo">
 					</a>
 
@@ -115,13 +115,13 @@
 									Home
 								</a>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="index.html">Home Demo 1</a>
-									<a class="dropdown-item" href="index-2.html">Home Demo 2</a>
+									<a class="dropdown-item" href="@Url.Action("index","home")">Home Demo 1</a>
+									<a class="dropdown-item" href="@Url.Action("index2","home")">Home Demo 2</a>
 								</div>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" href="about.html">About</a>
+								<a class="nav-link" href="@Url.Action("index","about")">About</a>
 							</li>
 
 							<li class="nav-item dropdown">
@@ -141,11 +141,10 @@
 									Pages
 								</a>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="services.html">Services</a>
-									<a class="dropdown-item" href="doctors.html">Our Doctor</a>
-									<a class="dropdown-item" href="doctors-details.html">Single Doctor</a>
-									<a class="dropdown-item" href="appointment.html">Book Appoinment</a>
-									<a class="dropdown-item active" href="faq.html">FAQ</a>
+									<a class="dropdown-item" href="@Url.Action("index","service")">Services</a>
+									<a class="dropdown-item" href="@Url.Action("index","doctor")">Our Doctor</a>
+									<a class="dropdown-item" href="@Url.Action("index","home")">Book Appoinment</a>
+									<a class="dropdown-item active" href="@Url.Action("index","faq")">FAQ</a>
 									<a class="dropdown-item" href="error.html">Error 404</a>
 								</div>
 							</li>
@@ -155,13 +154,13 @@
 									Blog
 								</a>
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="blog.html">Blog</a>
+									<a class="dropdown-item" href="@Url.Action("index","blog")">Blog</a>
 									<a class="dropdown-item" href="blog-details.html">Single Blog</a>
 								</div>
 							</li>
 
 							<li class="nav-item">
-								<a class="nav-link" href="contact.html">Contact</a>
+								<a class="nav-link" href="@Url.Action("index","contact")">Contact</a>
 							</li>
 						</ul>
 
@@ -182,32 +181,13 @@
 	@RenderBody()
 
 
-	<!-- Call To Action -->
-	<section class="call-to-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-9">
-					<div class="call-to-action-text">
-						<i class="icofont-first-aid"></i>
-						<h3>Health Care Center</h3>
-						<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
-					</div>
-				</div>
-
-				<div class="col-lg-3">
-					<a href="#" class="default-btn">Contact Us</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Call To Action -->
 	<!-- Footer -->
 	<footer class="pt-100 pb-50">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-4">
 					<div class="footer-widget">
-						<a href="#" class="footer-logo">
+						<a href="@Url.Action("index","home")" class="footer-logo">
 							<img src="~/Public/img/logo.png" alt="Logo">
 						</a>
 
@@ -226,12 +206,12 @@
 					<div class="footer-widget">
 						<h3>Quick Links</h3>
 						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Doctors</a></li>
-							<li><a href="#">Gallery</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="@Url.Action("index","home")">Home</a></li>
+							<li><a href="@Url.Action("index","about")">About</a></li>
+							<li><a href="@Url.Action("index","doctor")">Doctors</a></li>
+							<li><a href="@Url.Action("index","home")">Gallery</a></li>
+							<li><a href="@Url.Action("index","blog")">Blog</a></li>
+							<li><a href="@Url.Action("index","contact")">Contact</a></li>
 						</ul>
 					</div>
 				</div>

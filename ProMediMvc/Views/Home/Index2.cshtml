@@ -1,7 +1,336 @@
-﻿
+﻿@model IndexVm
+
 @{
-    ViewBag.Title = "Index2";
+	List<Service> services = ViewBag.Services as List<Service>;
+	ViewBag.Title = "Index2";
 }
 
-<h2>Index2</h2>
 
+<!-- Hero Slider -->
+<div class="hero-slider owl-carousel owl-theme">
+	@foreach (Slider slider in Model.Sliders.ToList())
+	{
+		<div class="hs-item hs-item-bg2" style="background-image: url('../../Public/img/slider/@slider.Photo')">
+			<div class="d-table">
+				<div class="d-tablecell">
+					<div class="hero-text text-center">
+						<h1>@slider.Title</h1>
+						<a href="@Url.Action("index", "about")" class="default-btn">Read More</a>
+						<a href="@Url.Action("index", "about")" class="default-btn">Appointment Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+<!-- End Hero Slider -->
+<!-- Welcome Section -->
+<section class="welcome-section ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<h2>Welcome to Promedi</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="row">
+			@foreach (ProMedi pro in Model.ProMedis.ToList())
+			{
+				<div class="col-md-6 col-lg-4">
+					<div class="single-box">
+						<div class="icon">
+							<i class="icofont-@pro.Icon"></i>
+						</div>
+
+						<h3>@pro.Title</h3>
+						<p>@pro.Desc</p>
+					</div>
+				</div>
+			}
+
+
+		</div>
+
+		<div class="welcome-inner-content">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-6">
+					<div class="welcome-image">
+						<img src="~/Public/img/@Model.About.Photo" alt="about">
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<span>About our medical</span>
+					<h3>@Model.About.Title</h3>
+					@Html.Raw(Model.About.Text)
+					<a href="@Url.Action("index","about")" class="default-btn">Learn More</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Welcome section -->
+<!-- Call To Action -->
+<section class="call-to-action">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="call-to-action-text">
+					<i class="icofont-first-aid"></i>
+					<h3>Health Care Center</h3>
+					<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<a href="@Url.Action("index", "contact")" class="default-btn">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Call To Action -->
+<!-- Services Section -->
+<section class="services-section ptb-100">
+	<div class="container">
+		<div class="section-title">
+			<h2>Our Services</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="row">
+			@foreach (Service service in services)
+			{
+				<div class="col-md-6 col-lg-4">
+					<div class="single-services">
+						<div class="icon">
+							<i class="icofont-@service.Icon"></i>
+						</div>
+						<h3>@service.Name</h3>
+						<p>@service.Desc</p>
+					</div>
+				</div>
+			}
+
+
+		</div>
+	</div>
+</section>
+<!-- End Services Section -->
+<!-- Departments section -->
+<section class="department-area ptb-100 gray-bg">
+	<div class="container">
+		<div class="section-title">
+			<h2>Our Departments</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+				<div class="tab">
+					<ul class="tabs">
+						@foreach (Department department in Model.Departments.ToList())
+						{
+							<li>
+								<a href="#">
+									<i class="icofont-@department.Icon"></i>
+									<br>
+									@department.Name
+								</a>
+							</li>
+						}
+
+					</ul>
+
+					<div class="tab_content">
+						@foreach (Department department in Model.Departments.ToList())
+						{
+							<div class="tabs_item">
+								<div class="row">
+									<div class="col-lg-6 col-md-12">
+										<div class="tabs_item_img">
+											<img src="~/Public/img/department/@department.Photo" alt="department">
+										</div>
+									</div>
+
+									<div class="col-lg-6 col-md-12">
+										<div class="tabs_item_content">
+											@Html.Raw(department.Text2)
+											<a href="@Url.Action("index", "about")" class="default-btn">Appointment Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Departments section -->
+<!-- Video Section -->
+@Html.Partial("_Video")
+<!-- End Video Section -->
+<!-- Counter section -->
+@Html.Partial("_Fact", Model.Facts)
+<!-- End counter section -->
+<!-- Expert Doctors -->
+@Html.Partial("_DocList")
+<!-- Edn Expert Doctors -->
+<!-- Appointment Area -->
+<div class="appointment-area">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-lg-5 p-0">
+				<div class="contant-number">
+					<h3><i class="icofont-phone"></i> 1-604-555-5555</h3>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-7 p-0">
+				<div class="appointment-form">
+					<h2 class="title">Make an Appointment</h2>
+					<form>
+						<div class="row">
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<input type="text" class="form-control" id="id_name" placeholder="Name">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<input type="email" class="form-control" id="id_email" placeholder="Email">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<input type="text" class="form-control" id="id_phone_number" placeholder="Phone Number">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<select class="form-control">
+										<option>Department</option>
+										<option>Cardiology</option>
+										<option>Neurology</option>
+										<option>Orthopedics</option>
+										<option>Radiology</option>
+										<option>Surgery</option>
+										<option>Urology</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<select class="form-control">
+										<option>Doctor</option>
+										<option>Dr. Anym Jackson</option>
+										<option>Dr. Mark Jacobson</option>
+										<option>Dr. Alex Davidson</option>
+										<option>Dr. Jaka Alex</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<input class="form-control" id="datepicker" placeholder="Booking Date">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+						</div>
+
+						<button type="submit" class="btn book-now-btn">Book Now</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Appointment Area -->
+<!-- Patient Feedback -->
+@Html.Partial("_Patient", Model.Patients)
+<!-- End Patient Feedback -->
+<!-- CTA Area -->
+<div class="cta-area gray-bg ptb-100">
+	<div class="container">
+		<div class="cta-text-content">
+			<h3>We are constantly evaluating and implementing ways to improve patient safety.</h3>
+			<p>Please speak up when you have questions or concerns.</p>
+
+			<div class="cta-contant">
+				<i class="icofont-phone"></i>
+				1-604-555-5555
+			</div>
+		</div>
+
+		<div class="cta-doctor-img">
+			<img src="~/Public/img/doctor.png" alt="Doctor">
+		</div>
+	</div>
+</div>
+<!-- CTA Area -->
+<!-- Latest news section -->
+<section class="latest-news ptb-100 pb-70">
+	<div class="container">
+		<div class="section-title">
+			<h2>Latest News</h2>
+			<p>We are ready to build your dream future Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		</div>
+
+		<div class="latest-news-carousel owl-carousel owl-theme owl-theme-2">
+			@foreach (Blog blog in Model.Blogs.ToList())
+			{
+				<div class="single-card actical-card">
+					<div class="thumb-img">
+						<a href="@Url.Action("detail","blog",new {Slug= blog.Slug })">
+							<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
+						</a>
+					</div>
+
+					<div class="caption-text">
+						<h3><a href="@Url.Action("detail","blog",new {Slug= blog.Slug })">@blog.Title</a></h3>
+
+						<ul class="meta-tag">
+							<li class="author">
+								<img src="~/Public/img/patient/@blog.Doctor.Photo" alt="">
+								<a href="@Url.Action("detail","doctor",new {Slug= blog.Doctor.Slug })">Dr. @blog.Doctor.Name</a>
+							</li>
+							<li>@blog.Date.ToString("dd MMM, yyyy")</li>
+							<li><i class="icofont-speech-comments"></i> 30</li>
+						</ul>
+
+						<p>@blog.Decs</p>
+
+						<a href="@Url.Action("index","about")" class="read-more">Read More <i class="icofont-swoosh-right"></i></a>
+					</div>
+				</div>
+			}
+
+		</div>
+	</div>
+</section>
+<!-- End Latest news section -->
+<!-- Our Newsletter -->
+<section class="newsletter-section ptb-100">
+	<div class="container">
+		<div class="section-title white-title">
+			<h2>Join Our Newsletter</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+		</div>
+
+		<div class="subscribe-from">
+			<form class="newsletter-form" data-toggle="validator">
+				<input type="email" class="form-control" placeholder="Enter email" name="EMAIL" required autocomplete="off">
+				<button type="submit" class="btn submit-btn"><i class="icofont-location-arrow"></i></button>
+				<div id="validator-newsletter" class="form-result"></div>
+			</form>
+		</div>
+	</div>
+</section>
+<!-- End Our Newsletter -->

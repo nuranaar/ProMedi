@@ -14,7 +14,7 @@
 
 			<div class="col-md-6 col-lg-5">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="@Url.Action("index","home")">Home</a></li>
 					<li>Department</li>
 				</ul>
 			</div>
@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="department-desc">
-					@Html.Raw(Model.Department.Text)	
+						@Html.Raw(Model.Department.Text)
 					</div>
 
 					<div class="share-department">
@@ -87,3 +87,22 @@
 	</div>
 </section>
 <!-- End Department Details section -->
+<!-- Call To Action -->
+<section class="call-to-action">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="call-to-action-text">
+					<i class="icofont-first-aid"></i>
+					<h3>Health Care Center</h3>
+					<p>if you have any Emerangcy by health problem contact this <span>No. 035 687 9514</span> or contact form</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<a href="@Url.Action("index","contact")" class="default-btn">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End Call To Action -->

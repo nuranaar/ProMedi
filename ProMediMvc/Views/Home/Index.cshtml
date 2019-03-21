@@ -9,7 +9,7 @@
 
 		@foreach (Slider slider in Model.Sliders.ToList())
 		{
-			<div class="hs-item hs-item-@slider.Photo">
+			<div class="hs-item" style="background-image: url('../../Public/img/slider/@slider.Photo')">
 				<div class="d-table">
 					<div class="d-tablecell">
 						<div class="hero-text text-center">
@@ -26,9 +26,6 @@
 	<div class="services-area services-box">
 		<div class="container">
 			<div class="row">
-
-
-
 				@foreach (ProMedi pro in Model.ProMedis.ToList())
 				{
 					<div class="col-md-4 col-lg-4">
@@ -63,7 +60,7 @@
 					<div class="about-us-text">
 						<h2>@Model.About.Title</h2>
 @Html.Raw(Model.About.Text)
-						<a href="#" class="default-btn">About Us</a>
+						<a href="@Url.Action("index","about")" class="default-btn">About Us</a>
 					</div>
 				</div>
 			</div>
@@ -83,7 +80,7 @@
 				</div>
 
 				<div class="col-md-12 col-lg-3">
-					<a href="#" class="default-btn">Contact Us</a>
+					<a href="@Url.Action("index","contact")" class="default-btn">Contact Us</a>
 				</div>
 			</div>
 		</div>
@@ -247,7 +244,7 @@
 							<ul class="meta-tag">
 								<li class="author">
 									<img src="~/Public/img/patient/@blog.Doctor.Photo" alt="">
-									<a href="#">Dr. @blog.Doctor.Name</a>
+									<a href="@Url.Action("detail","doctor",new {Slug= blog.Doctor.Slug })">Dr. @blog.Doctor.Name</a>
 								</li>
 								<li>@blog.Date.ToString("dd MMM, yyyy")</li>
 								<li><i class="icofont-speech-comments"></i> 30</li>

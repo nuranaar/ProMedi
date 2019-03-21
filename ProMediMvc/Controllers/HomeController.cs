@@ -29,7 +29,18 @@ namespace ProMediMvc.Controllers
         }
 		public ActionResult Index2()
 		{
-			return View();
+			IndexVm model = new IndexVm()
+			{
+				Sliders = db.Sliders.ToList(),
+				About = db.Abouts.Find(2),
+				ProMedis = db.ProMedis.ToList(),
+				Patients = db.Patients.ToList(),
+				Departments = db.Departments.ToList(),
+				Facts = db.Facts.ToList(),
+				Blogs = db.Blogs.OrderBy(b => b.Date).Take(4).ToList()
+			};
+			ViewBag.Services = db.Services.ToList();
+			return View(model);
 		}
 	}
 }
