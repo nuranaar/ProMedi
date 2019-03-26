@@ -10,17 +10,17 @@
 <div class="hero-slider owl-carousel owl-theme">
 	@foreach (Slider slider in Model.Sliders.ToList())
 	{
-		<div class="hs-item hs-item-bg2" style="background-image: url('../../Public/img/slider/@slider.Photo')">
-			<div class="d-table">
-				<div class="d-tablecell">
-					<div class="hero-text text-center">
-						<h1>@slider.Title</h1>
-						<a href="@Url.Action("index", "about")" class="default-btn">Read More</a>
-						<a href="@Url.Action("index", "about")" class="default-btn">Appointment Now</a>
-					</div>
+	<div class="hs-item hs-item-bg2" style="background-image: url('../../Public/img/slider/@slider.Photo')">
+		<div class="d-table">
+			<div class="d-tablecell">
+				<div class="hero-text text-center">
+					<h1>@slider.Title</h1>
+					<a href="@Url.Action("index", "about")" class="default-btn">Read More</a>
+					<a href="@Url.Action("index", "about")" class="default-btn">Appointment Now</a>
 				</div>
 			</div>
 		</div>
+	</div>
 	}
 </div>
 <!-- End Hero Slider -->

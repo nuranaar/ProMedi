@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using ProMediMvc.Models;
+using ProMediMvc.Areas.Manage.Models;
 
 
 namespace ProMediMvc.DAL
@@ -31,5 +32,9 @@ namespace ProMediMvc.DAL
 		public DbSet<Slider> Sliders { get; set; }
 		public DbSet<Expert> Experts { get; set; }
 		public DbSet<ProMedi> ProMedis { get; set; }
+
+
+
+		public DbSet<Admin> Admins { get; set; }
 	}
 }

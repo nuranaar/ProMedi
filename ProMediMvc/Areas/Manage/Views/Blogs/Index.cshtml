@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProMediMvc.Models.Blog>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div class="card-header card-header-danger">
+	<h4 class="card-title ">Blogs</h4>
+	<p>
+			@Html.ActionLink("Create New", "Create")
+		</p>
+</div>
+<div class="card-body table-responsive">
+	<table class="table">
+	<tr>
+
+		<th>
+			@Html.DisplayNameFor(model => model.Title)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Photo)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Decs)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Date)
+		</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Title)
+			</td>
+			<td>
+				<img src="~/Uploads/@item.Photo"  width="150" />
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Decs)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Date)
+			</td>
+			<td>
+				<a href="@Url.Action("edit", new { id = item.Id })" rel="tooltip" class="btn btn-primary">
+					<i class="fas fa-edit"></i>
+				</a>
+				<a href="@Url.Action("delete", new { id = item.Id })" rel="tooltip" class="btn btn-danger">
+					<i class="fas fa-trash-alt"></i>
+				</a>
+			</td>
+		</tr>
+	}
+
+	</table>
+	</div>
