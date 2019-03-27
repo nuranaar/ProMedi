@@ -17,7 +17,7 @@ namespace ProMediMvc.Areas.Manage
             context.MapRoute(
                 "Manage_default",
                 "manage/{controller}/{action}/{id}",
-                new {  action = "Index", id = UrlParameter.Optional },
+                new { controller="login" , action = "Index", id = UrlParameter.Optional },
 				new[] { "ProMediMvc.Areas.Manage.Controllers" }
 			);
         }

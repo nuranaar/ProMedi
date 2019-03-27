@@ -4,12 +4,16 @@
 	ViewBag.Title = "Index";
 }
 
-<div class="card-header card-header-danger">
-	<h4 class="card-title ">Blogs</h4>
-	<p>
-			@Html.ActionLink("Create New", "Create")
-		</p>
-</div>
+	<div class="card-header card-header-danger d-flex justify-content-between">
+		<h4 class="card-title ">Blogs</h4>
+		
+		<div>
+			<a href="@Url.Action("Create")">
+			<h3><i class="far fa-plus-square"></i></h3>	
+			</a>
+		</div>
+
+	</div>
 <div class="card-body table-responsive">
 	<table class="table">
 	<tr>
@@ -45,12 +49,12 @@
 				@Html.DisplayFor(modelItem => item.Date)
 			</td>
 			<td>
-				<a href="@Url.Action("edit", new { id = item.Id })" rel="tooltip" class="btn btn-primary">
-					<i class="fas fa-edit"></i>
-				</a>
-				<a href="@Url.Action("delete", new { id = item.Id })" rel="tooltip" class="btn btn-danger">
-					<i class="fas fa-trash-alt"></i>
-				</a>
+					<a href="@Url.Action("edit", new { id = item.Id })" rel="tooltip" class="btn btn-primary">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a href="@Url.Action("delete", new { id = item.Id })" rel="tooltip" class="btn btn-danger">
+						<i class="fas fa-trash-alt"></i>
+					</a>
 			</td>
 		</tr>
 	}

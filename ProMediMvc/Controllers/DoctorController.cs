@@ -28,7 +28,7 @@ namespace ProMediMvc.Controllers
 			};
 
 			model.Speciality = db.Specialities.FirstOrDefault(s => s.DepartmentId == model.Doctor.DepartmentId);
-			model.SpecExperts = db.SpecExperts.Include("Expert").Where(se => se.SpecoalityId == model.Speciality.Id).ToList();
+			model.SpecExperts = db.SpecExperts.Include("Expert").Where(se => se.SpecialityId == model.Speciality.Id).ToList();
 			if (model == null)
 			{
 				return HttpNotFound();

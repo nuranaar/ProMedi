@@ -15,5 +15,9 @@ namespace ProMediMvc.ViewModels
 		public List<BlogTag> Tags { get; set; }
 
 		public List<Doctor> Doctors { get; set; }
+
+		public int Page { get; set; }
+
+		public int TotalPage { get; set; }
 	}
 }

@@ -1,0 +1,164 @@
+﻿@model ProMediMvc.Models.Setting
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<div class="card-header card-header-danger">
+	<h4 class="card-title ">Details</h4>
+</div>
+<div class="card-body table-responsive">
+	<table class="table">
+		<div class="form-horizontal">
+			<h4>Setting</h4>
+			<hr />
+			<dl class="dl-horizontal">
+				<dt>
+					@Html.DisplayNameFor(model => model.Logo)
+				</dt>
+
+				<dd>
+					<img src="~/Uploads/@Model.Logo" width="100" />
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Phone)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Phone)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.PhoneIcon)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.PhoneIcon)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Email1)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Email1)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Email2)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Email2)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.EmailIcon)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.EmailIcon)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Address)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Address)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.LocationIcon)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.LocationIcon)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Facebook)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Facebook)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Twitter)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Twitter)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Instagram)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Instagram)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.LinkedIn)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.LinkedIn)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.GooglePlus)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.GooglePlus)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.VideoUrl)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.VideoUrl)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.VideoText)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.VideoText)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Lat)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Lat)
+				</dd>
+
+				<dt>
+					@Html.DisplayNameFor(model => model.Lng)
+				</dt>
+
+				<dd>
+					@Html.DisplayFor(model => model.Lng)
+				</dd>
+				<dd>
+					<a href="@Url.Action("edit", new { id = Model.Id })" rel="tooltip" class="btn btn-primary">
+						<i class="fas fa-edit"></i>
+					</a>
+				</dd>
+			</dl>
+		</div>
+		</table>
+		</div>
+	<div>
+		<a href="@Url.Action("Index")">
+			<h3 class="pl-3"><i class="fas fa-backspace"></i></h3>
+		</a>
+	</div>

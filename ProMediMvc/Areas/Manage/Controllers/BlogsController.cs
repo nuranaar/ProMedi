@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Hyna.Areas.Manage.Filters;
 using ProMediMvc.Areas.Manage.Helpers;
 using ProMediMvc.DAL;
 using ProMediMvc.Models;
 
 namespace ProMediMvc.Areas.Manage.Controllers
 {
-    public class BlogsController : Controller
+	[Auth]
+	public class BlogsController : Controller
     {
         private ProMediContext db = new ProMediContext();
 

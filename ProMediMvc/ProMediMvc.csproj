@@ -128,8 +128,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Manage\Controllers\AboutsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\BlogCatsController.cs" />
     <Compile Include="Areas\Manage\Controllers\BlogsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\BlogTagsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Manage\Controllers\DepartmentsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\DoctorsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\ExpertsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\FactsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\FaqsController.cs" />
     <Compile Include="Areas\Manage\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Manage\Controllers\PatientsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\ProMedisController.cs" />
+    <Compile Include="Areas\Manage\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Manage\Controllers\SlidersController.cs" />
+    <Compile Include="Areas\Manage\Controllers\SpecialitiesController.cs" />
     <Compile Include="Areas\Manage\Filters\Auth.cs" />
     <Compile Include="Areas\Manage\Helpers\FileManage.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
@@ -179,6 +192,18 @@
     <Compile Include="Migrations\201903251753257_AddAdmin1.cs" />
     <Compile Include="Migrations\201903251753257_AddAdmin1.Designer.cs">
       <DependentUpon>201903251753257_AddAdmin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903270819057_ChangeAdminsModel.cs" />
+    <Compile Include="Migrations\201903270819057_ChangeAdminsModel.Designer.cs">
+      <DependentUpon>201903270819057_ChangeAdminsModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903270820338_ChangeAdminsModel1.cs" />
+    <Compile Include="Migrations\201903270820338_ChangeAdminsModel1.Designer.cs">
+      <DependentUpon>201903270820338_ChangeAdminsModel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903270925548_ChangeSpecExpert.cs" />
+    <Compile Include="Migrations\201903270925548_ChangeSpecExpert.Designer.cs">
+      <DependentUpon>201903270925548_ChangeSpecExpert.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
@@ -2014,6 +2039,54 @@
     <Content Include="Areas\Manage\Views\Blogs\Delete.cshtml" />
     <Content Include="Areas\Manage\Views\Blogs\Edit.cshtml" />
     <Content Include="Areas\Manage\Views\Blogs\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Departments\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Doctors\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Doctors\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Doctors\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Doctors\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Patients\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Patients\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Patients\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Patients\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\ProMedis\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\ProMedis\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\ProMedis\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\ProMedis\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Sliders\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Sliders\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Sliders\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Sliders\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Settings\Details.cshtml" />
+    <Content Include="Areas\Manage\Views\Settings\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogCats\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogCats\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogCats\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogCats\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogTags\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogTags\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogTags\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\BlogTags\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Experts\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Experts\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Experts\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Experts\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Specialities\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Specialities\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Specialities\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Specialities\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Facts\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Facts\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Facts\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Facts\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Faqs\Create.cshtml" />
+    <Content Include="Areas\Manage\Views\Faqs\Delete.cshtml" />
+    <Content Include="Areas\Manage\Views\Faqs\Edit.cshtml" />
+    <Content Include="Areas\Manage\Views\Faqs\Index.cshtml" />
+    <Content Include="Areas\Manage\Views\Dashboard\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -2059,6 +2132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903251753257_AddAdmin1.resx">
       <DependentUpon>201903251753257_AddAdmin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270819057_ChangeAdminsModel.resx">
+      <DependentUpon>201903270819057_ChangeAdminsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270820338_ChangeAdminsModel1.resx">
+      <DependentUpon>201903270820338_ChangeAdminsModel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270925548_ChangeSpecExpert.resx">
+      <DependentUpon>201903270925548_ChangeSpecExpert.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProMediMvc.Models.BlogCat>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<div class="card-header card-header-danger d-flex justify-content-between">
+	<h4 class="card-title ">Blog categories</h4>
+
+	<div>
+		<a href="@Url.Action("Create")">
+			<h3><i class="far fa-plus-square"></i></h3>
+		</a>
+	</div>
+
+</div>
+<div class="card-body table-responsive">
+	<table class="table">
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th></th>
+		</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					<a href="@Url.Action("edit", new { id = item.Id })" rel="tooltip" class="btn btn-primary">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a href="@Url.Action("delete", new { id = item.Id })" rel="tooltip" class="btn btn-danger">
+						<i class="fas fa-trash-alt"></i>
+					</a>
+				</td>
+			</tr>
+		}
+
+	</table>
+</div>

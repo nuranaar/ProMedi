@@ -9,7 +9,7 @@
 
 		@foreach (Slider slider in Model.Sliders.ToList())
 		{
-			<div class="hs-item" style="background-image: url('../../Public/img/slider/@slider.Photo')">
+			<div class="hs-item" style="background-image: url('../../Uploads/@slider.Photo')">
 				<div class="d-table">
 					<div class="d-tablecell">
 						<div class="hero-text text-center">
@@ -31,7 +31,7 @@
 					<div class="col-md-4 col-lg-4">
 						<div class="single-card">
 							<div class="thumb-img">
-								<img src="~/Public/img/services/@pro.Photo" alt="Service Image" />
+								<img src="~/Uploads/@pro.Photo" alt="Service Image" />
 							</div>
 
 							<div class="caption-text text-center">
@@ -52,7 +52,7 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-md-12 col-lg-6">
 					<div class="about-us-img">
-						<img src="~/Public/img/@Model.About.Photo" alt="About Us Image">
+						<img src="~/Uploads/@Model.About.Photo" alt="About Us Image">
 					</div>
 				</div>
 
@@ -234,7 +234,7 @@
 					<div class="single-card actical-card">
 						<div class="thumb-img">
 							<a href="@Url.Action("detail","blog",new {Slug= blog.Slug })">
-								<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
+								<img src="~/Uploads/@blog.Photo" alt="News Image" />
 							</a>
 						</div>
 
@@ -243,7 +243,7 @@
 
 							<ul class="meta-tag">
 								<li class="author">
-									<img src="~/Public/img/patient/@blog.Doctor.Photo" alt="">
+									<img src="~/Uploads/@blog.Doctor.Photo" alt="">
 									<a href="@Url.Action("detail","doctor",new {Slug= blog.Doctor.Slug })">Dr. @blog.Doctor.Name</a>
 								</li>
 								<li>@blog.Date.ToString("dd MMM, yyyy")</li>

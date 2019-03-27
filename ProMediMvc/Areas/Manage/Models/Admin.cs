@@ -15,12 +15,10 @@ namespace ProMediMvc.Areas.Manage.Models
 		public string Fullname { get; set; }
 
 		[Required]
-		[DataType(DataType.Password)]
-		[StringLength(50)]
+		[StringLength(100)]
 		public string Password { get; set; }
 
 		[Required]
-		[DataType(DataType.EmailAddress)]
 		[StringLength(50)]
 		public string Email { get; set; }
 

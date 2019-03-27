@@ -10,7 +10,7 @@
 <div class="hero-slider owl-carousel owl-theme">
 	@foreach (Slider slider in Model.Sliders.ToList())
 	{
-	<div class="hs-item hs-item-bg2" style="background-image: url('../../Public/img/slider/@slider.Photo')">
+	<div class="hs-item hs-item-bg2" style="background-image: url('../../Uploads/@slider.Photo')">
 		<div class="d-table">
 			<div class="d-tablecell">
 				<div class="hero-text text-center">
@@ -54,7 +54,7 @@
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-6">
 					<div class="welcome-image">
-						<img src="~/Public/img/@Model.About.Photo" alt="about">
+						<img src="~/Uploads/@Model.About.Photo" alt="about">
 					</div>
 				</div>
 
@@ -147,7 +147,7 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-12">
 										<div class="tabs_item_img">
-											<img src="~/Public/img/department/@department.Photo" alt="department">
+											<img src="~/Uploads/@department.Photo" alt="department">
 										</div>
 									</div>
 
@@ -289,7 +289,7 @@
 				<div class="single-card actical-card">
 					<div class="thumb-img">
 						<a href="@Url.Action("detail","blog",new {Slug= blog.Slug })">
-							<img src="~/Public/img/news/@blog.Photo" alt="News Image" />
+							<img src="~/Uploads/@blog.Photo" alt="News Image" />
 						</a>
 					</div>
 
@@ -298,7 +298,7 @@
 
 						<ul class="meta-tag">
 							<li class="author">
-								<img src="~/Public/img/patient/@blog.Doctor.Photo" alt="">
+								<img src="~/Uploads/@blog.Doctor.Photo" alt="">
 								<a href="@Url.Action("detail","doctor",new {Slug= blog.Doctor.Slug })">Dr. @blog.Doctor.Name</a>
 							</li>
 							<li>@blog.Date.ToString("dd MMM, yyyy")</li>

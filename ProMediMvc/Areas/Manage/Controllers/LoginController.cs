@@ -17,7 +17,7 @@ namespace ProMediMvc.Areas.Manage.Controllers
         {
 			if (Session["AdminLogin"] != null)
 			{
-				return RedirectToAction("index, dashboard");
+				return RedirectToAction("index"," dashboard");
 			}
             return View();
         }
@@ -28,17 +28,19 @@ namespace ProMediMvc.Areas.Manage.Controllers
 				Session["LoginError"] = "Email and password must fill";
 				return RedirectToAction("index");
 			}
+
 			Admin adm = db.Admins.FirstOrDefault(a => a.Email == admin.Email);
 			if (adm != null)
 			{
-				if(Crypto.VerifyHashedPassword(adm.Password, admin.Password))
+				if (Crypto.VerifyHashedPassword(adm.Password, admin.Password))
 				{
 					Session["AdminLogin"] = true;
 					Session["Admin"] = adm;
-					return RedirectToAction("index, dashboard");
+					return RedirectToAction("index", "dashboard");
 				}
 			}
-			Session["LoginError"] = "Email or password incorrects";
+
+			Session["LoginError"] = "Email or password incorrect";
 			return RedirectToAction("index");
 		}
 		

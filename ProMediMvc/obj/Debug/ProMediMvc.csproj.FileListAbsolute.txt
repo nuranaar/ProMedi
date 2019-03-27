@@ -1,4 +1,3 @@
-C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.csprojAssemblyReference.cache
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.csproj.CoreCompileInputs.cache
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\bin\ProMediMvc.dll.config
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\bin\ProMediMvc.dll
@@ -91,3 +90,7 @@ C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migration
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddVideoText.resources
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddAdmin.resources
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddAdmin1.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.ChangeAdminsModel.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.ChangeAdminsModel1.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.ChangeSpecExpert.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.csprojAssemblyReference.cache

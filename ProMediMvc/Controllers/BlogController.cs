@@ -10,11 +10,13 @@ namespace ProMediMvc.Controllers
     public class BlogController : BaseController
     {
         // GET: Blog
-        public ActionResult Index()
+        public ActionResult Index(int page=1)
         {
 			BlogVm model = new BlogVm()
 			{
-				Blogs = db.Blogs.OrderBy(b => b.Date).Take(4).ToList(),
+				Blogs = db.Blogs.OrderBy(b => b.Date).Skip((page-1)*3).Take(4).ToList(),
+				TotalPage=Convert.ToInt32(Math.Ceiling(db.Blogs.Count()/3.0)),
+				Page=page,
 				Tags = db.BlogTags.ToList(),
 				Cats = db.BlogCats.ToList(),
 				Doctors = db.Doctors.ToList()
@@ -36,5 +38,6 @@ namespace ProMediMvc.Controllers
 			}
 			return View(blog);
 		}
+
     }
 }
