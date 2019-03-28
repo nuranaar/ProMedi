@@ -2,8 +2,12 @@
 // Promedi Contact Form  JS
 /*==============================================================*/
 (function ($) {
+
+	
+
+
     "use strict"; // Start of use strict
-    $("#contactForm").validator().on("submit", function (event) {
+	$("#appform").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
             formError();
@@ -13,15 +17,13 @@
             event.preventDefault();
             submitForm();
         }
-    });
-
+	});
 
     function submitForm(){
-
-		var form = $("#contactForm");
+		var form = $("#appform");
 		var formData = $(form).serialize();
         $.ajax({
-			type: "POST",
+            type: "POST",
 			url: $(form).attr('action'),
 			data: formData,
             success : function(text){
@@ -36,22 +38,23 @@
     }
 
     function formSuccess(){
-        $("#contactForm")[0].reset();
+		$("#appform")[0].reset();
         submitMSG(true, "Message Submitted!")
     }
 
     function formError(){
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		$("#appform").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass();
         });
-    }
+	}
+	function submitMSG(valid, msg) {
+		if (valid) {
+			var msgClasses = "h4 text-left tada animated text-success";
+		} else {
+			var msgClasses = "h4 text-left text-danger";
+		}
+		$("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+	}
 
-    function submitMSG(valid, msg){
-        if(valid){
-            var msgClasses = "h4 text-left tada animated text-success";
-        } else {
-            var msgClasses = "h4 text-left text-danger";
-        }
-        $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
+
 }(jQuery)); // End of use strict

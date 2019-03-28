@@ -1,7 +1,6 @@
 ﻿       
 @{ 
 	    Setting setting = ViewBag.Setting as Setting;
-
 }
  <!-- Page Title -->
 <div class="page-title">
@@ -50,11 +49,11 @@
 				<h3 class="title">Questions? Let our experts help!</h3>
 				<p>Team of Professionals</p>
 
-				<form id="contactForm">
+				<form id="contactForm" method="post" action="@Url.Action("message")">
 					<div class="row">
 						<div class="col-lg-6 col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" name="name" id="name" required data-error="Please enter your name" placeholder="Name">
+								<input type="text" class="form-control" name="name" id="name" required data-error="Please enter your name" placeholder="Name" >
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
@@ -68,7 +67,7 @@
 
 						<div class="col-lg-6 col-md-6">
 							<div class="form-group">
-								<input type="text" class="form-control" name="subject" id="subject" required data-error="Please enter your subject" placeholder="Subject">
+								<input type="text" class="form-control" name="subject" id="subject"  data-error="Please enter your subject" placeholder="Subject">
 								<div class="help-block with-errors"></div>
 							</div>
 						</div>
@@ -100,5 +99,5 @@
 </section>
 <!-- End Contact section -->
 <!-- Map -->
-<div id="map"></div>
+<div id="map" data-lat="@setting.Lat" data-lng="@setting.Lng"></div>
 <!-- End Map -->

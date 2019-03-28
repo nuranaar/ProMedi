@@ -1,0 +1,106 @@
+﻿
+@{
+	Setting setting = ViewBag.Set as Setting;
+	List<Department> deps = ViewBag.Deps as List<Department>;
+	List<Doctor> docs = ViewBag.Docs as List<Doctor>;
+	ViewBag.Title = "Index";
+}
+
+<!-- Page Title -->
+<div class="page-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-lg-7">
+				<h2>Appointment</h2>
+			</div>
+
+			<div class="col-md-6 col-lg-5">
+				<ul>
+					<li><a href="@Url.Action("index", "home")">Home</a></li>
+					<li>Appointment</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Page Title -->
+<!-- Appointment Area -->
+<div class="appointment-area">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 col-lg-5 p-0">
+				<div class="contant-number">
+					<h3><i class="icofont-@setting.PhoneIcon"></i> @setting.Phone</h3>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-7 p-0">
+				<div class="appointment-form">
+					<h2 class="title">Make an Appointment</h2>
+					<form method="post" action="@Url.Action("message")" id="appform">
+						<div class="row">
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<input name="email" type="email" class="form-control" id="email" placeholder="Email">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<input name="number" type="text" class="form-control" id="number" placeholder="Phone Number">
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<select name="depart" id="depart" class="form-control">
+										<option>Department</option>
+										@foreach (Department dep in deps)
+										{
+											<option value="@dep.Name">@dep.Name</option>
+										}
+
+
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pr-10">
+								<div class="form-group">
+									<select name="doctor" id="doctor" class="form-control">
+										<option>Doctor</option>
+										@foreach (Doctor doc in docs)
+										{
+											<option value="@doc.Name">@doc.Name</option>
+										}
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-6 col-lg-6 pl-10">
+								<div class="form-group">
+									<input name="date" class="form-control" id="datepicker" placeholder="Booking Date">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<textarea name="message" class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+						</div>
+						<div class="col-lg-12 col-md-12">
+							<button type="submit" class="default-btn">Book Now</button>
+							<div id="msgSubmit" class="h3 text-center hidden"></div>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Appointment Area -->

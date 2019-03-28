@@ -148,6 +148,7 @@
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Areas\Manage\Models\Admin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -1832,6 +1833,7 @@
     <Content Include="Public\img\slider\3.jpg" />
     <Content Include="Public\img\video-bg.jpg" />
     <Content Include="Public\js\bootstrap.min.js" />
+    <Content Include="Public\js\appointment-form-script.js" />
     <Content Include="Public\js\contact-form-script.js" />
     <Content Include="Public\js\form-validator.min.js" />
     <Content Include="Public\js\jquery.ajaxchimp.min.js" />
@@ -2104,6 +2106,7 @@
     <Content Include="Views\Department\Detail.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
     <Content Include="Views\Doctor\Detail.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

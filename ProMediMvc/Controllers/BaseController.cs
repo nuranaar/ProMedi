@@ -14,7 +14,7 @@ namespace ProMediMvc.Controllers
 
 		public BaseController()
 		{
-			ViewBag.Setting = db.Settings.First();
+			ViewBag.Setting = db.Settings.FirstOrDefault();
 			ViewBag.Department = db.Departments.ToList();
 			ViewBag.DocList = db.Doctors.ToList();
 			ViewBag.Spesiality = db.Specialities.ToList();
