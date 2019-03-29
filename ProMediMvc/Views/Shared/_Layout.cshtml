@@ -12,24 +12,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/bootstrap.min.css">
-	<!-- IcoFont Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/icofont.min.css">
-	<!-- Owl Carousel Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/owl.carousel.min.css">
-	<!-- Owl Theme Default Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/owl.theme.default.min.css">
-	<!-- Animate Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/animate.min.css">
-	<!-- Magnific Popup Min CSS -->
-	<link rel="stylesheet" href="~/Public/css/magnific-popup.css">
-	<!-- Jquery UI CSS -->
-	<link rel="stylesheet" href="~/Public/css/jquery.ui.css">
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="~/Public/css/style.css">
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="~/Public/css/responsive.css">
+	@Styles.Render("~/bundles/css")
 
 	<title>ProMedi - Medical HTML Template</title>
 
@@ -155,7 +138,6 @@
 								</a>
 								<div class="dropdown-menu">
 									<a class="dropdown-item" href="@Url.Action("index","blog")">Blog</a>
-									<a class="dropdown-item" href="blog-details.html">Single Blog</a>
 								</div>
 							</li>
 
@@ -165,7 +147,7 @@
 						</ul>
 
 						<div class="appointment-inline my-lg-0">
-							<a href="appointment.html" class="appointment-btn">
+							<a href="@Url.Action("index", "appointment")" class="appointment-btn">
 								Make an Appointment
 								<i class="icofont-simple-right"></i>
 							</a>
@@ -222,7 +204,7 @@
 						<ul>
 							@foreach (var depart in departments)
 							{
-								<li><a href="@Url.Action("detail", "department", new {Slug=depart.Slug })">@depart.Name</a></li>
+								<li><a href="@Url.Action("detail", "department", new {slug=depart.Slug })">@depart.Name</a></li>
 							}
 						</ul>
 					</div>
@@ -262,35 +244,10 @@
 		</div>
 	</footer>
 	<!-- End Footer -->
-	<!-- Jquery Min JS -->
-	<script src="~/Public/js/jquery.min.js"></script>
-	<!-- Popper Min JS -->
-	<script src="~/Public/js/popper.min.js"></script>
-	<!-- Bootstrap Min JS -->
-	<script src="~/Public/js/bootstrap.min.js"></script>
-	<!-- Owl Carousel Min JS -->
-	<script src="~/Public/js/owl.carousel.min.js"></script>
-	<!-- Magnific Popup Min JS -->
-	<script src="~/Public/js/jquery.magnific-popup.min.js"></script>
-	<!-- Waypoints Min JS -->
-	<script src="~/Public/js/waypoints.min.js"></script>
-	<!-- Counter UP Min JS -->
-	<script src="~/Public/js/jquery.counterup.min.js"></script>
-	<!-- Jquery UI JS -->
-	<script src="~/Public/js/jquery.ui.js"></script>
-	<!-- ajaxChimp Min JS -->
-	<script src="~/Public/js/jquery.ajaxchimp.min.js"></script>
-	<!-- Form Validator JS -->
-	<script src="~/Public/js/form-validator.min.js"></script>
-	<!-- Form JS -->
-	<script src="~/Public/js/contact-form-script.js"></script>
-	<script src="~/Public/js/appointment-form-script.js"></script>
+@Scripts.Render("~/bundles/js")
+
 	<!-- Map API JS FILES -->
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApghCIIx9MpQhA768sKXxvR_Okg0SF2k4&amp;callback=initMap"></script>
-	<!-- Fox Map JS FILE -->
-	<script src="~/Public/js/promedi-map.js"></script>
-	<!-- Main JS -->
-	<script src="~/Public/js/script.js"></script>
 </body>
 
 <!-- Mirrored from envytheme.com/tf-demo/promedi/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2019 21:21:45 GMT -->

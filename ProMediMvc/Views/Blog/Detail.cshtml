@@ -1,6 +1,7 @@
 ﻿@model Blog
 @{
-	ViewBag.Title = "Detail";
+	Blog prev = ViewBag.PrevBlog as Blog;
+	Blog next = ViewBag.NextBlog as Blog;
 }
 
 
@@ -41,7 +42,7 @@
 
 						<h3>@Model.Title</h3>
 						@Html.Raw(Model.Text)
-	
+
 						<div class="share-post">
 							<ul>
 								<li><a href="#"><i class="icofont-facebook"></i></a></li>
@@ -55,13 +56,21 @@
 				</div>
 
 				<div class="post-controls-buttons">
-					<div class="controls-left">
-						<a href="#"><i class="icofont-double-left"></i> Prev Post</a>
-					</div>
+					@if (prev != null)
+					{
+						<div class="controls-left">
+							<a href="@Url.Action("detail", "blog", new { slug = prev.Slug })"><i class="icofont-double-left"></i> Prev Post</a>
+						</div>
+					}
+					@if (next != null)
+					{
+						<div class="controls-right">
+							<a href="@Url.Action("detail", "blog", new { slug = next.Slug })">Next Post <i class="icofont-double-right"></i></a>
+						</div>
+					}
 
-					<div class="controls-right">
-						<a href="#">Next Post <i class="icofont-double-right"></i></a>
-					</div>
+
+
 				</div>
 
 				<div class="post-comments">
@@ -160,7 +169,7 @@
 			</div>
 
 			<div class="col-lg-3">
-				<a href="#" class="default-btn">Contact Us</a>
+				<a href="@Url.Action("index", "contact")" class="default-btn">Contact Us</a>
 			</div>
 		</div>
 	</div>

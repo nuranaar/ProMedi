@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProMediMvc.Models;
 using ProMediMvc.ViewModels;
 
 namespace ProMediMvc.Controllers
@@ -30,12 +31,26 @@ namespace ProMediMvc.Controllers
 			{
 				return HttpNotFound();
 			}
-			var blog = db.Blogs.Include("Doctor").FirstOrDefault(b=> b.Slug == Slug);
+			var blog = db.Blogs.Include("Doctor").FirstOrDefault(b => b.Slug == Slug);
+
+			List<Blog> blogs = db.Blogs.OrderByDescending(b => b.Id).ToList();
+
+			int index = blogs.IndexOf(blog);
+
+			if ((index + 1) < blogs.Count())
+			{
+				ViewBag.PrevBlog = blogs[index + 1];
+			}
+			if ((index - 1) >= 0)
+			{
+				ViewBag.NextBlog = blogs[index - 1];
+			}
 
 			if (blog == null)
 			{
 				return HttpNotFound();
 			}
+
 			return View(blog);
 		}
 

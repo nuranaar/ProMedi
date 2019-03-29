@@ -13,8 +13,18 @@ namespace ProMediMvc
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 			routes.MapRoute(
+				name: "DepartmentUrl",
+				url: "{controller}/{action}/{*slug}",
+				defaults: new { controller = "Department", action = "Detail", slug = UrlParameter.Optional }
+			);
+			routes.MapRoute(
+				name: "DoctorUrl",
+				url: "{controller}/{action}/{*slug}",
+				defaults: new { controller = "Doctor", action = "Detail", slug = UrlParameter.Optional }
+			);
+			routes.MapRoute(
 				name: "BlogUrl",
-				url: "detail/{*slug}",
+				url: "{controller}/{action}/{*slug}",
 				defaults: new { controller = "Blog", action = "Detail", slug = UrlParameter.Optional }
 			);
 			routes.MapRoute(
