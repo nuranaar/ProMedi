@@ -43,7 +43,7 @@ namespace ProMediMvc.Controllers
 				Credentials = new NetworkCredential
 				{
 					UserName = "nuranaar@code.edu.az",
-					Password = "iphone600"
+					Password = ""
 				}
 			};
 			client.Send(MailMessage);

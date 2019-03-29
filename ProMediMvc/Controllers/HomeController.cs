@@ -42,5 +42,9 @@ namespace ProMediMvc.Controllers
 			ViewBag.Services = db.Services.ToList();
 			return View(model);
 		}
+		public ActionResult Error()
+		{
+			return View();
+		}
 	}
 }

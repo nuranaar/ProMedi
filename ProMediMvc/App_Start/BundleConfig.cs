@@ -36,6 +36,19 @@ namespace ProMediMvc
 					"~/Public/css/jquery.ui.css",
 					"~/Public/css/style.css",
 					"~/Public/css/responsive.css"));
+
+			// SB-admin bundles
+			bundles.Add(new ScriptBundle("~/sb-bundles/js").Include(
+	"~/Areas/Manage/Public/vendor/bootstrap/js/bootstrap.bundle.min.js",
+	"~/Areas/Manage/Public/vendor/jquery-easing/jquery.easing.min.js",
+	"~/Areas/Manage/Public/js/sb-admin-2.js",
+	"~/Areas/Manage/Public/vendor/jquery/jquery.min.js"));
+
+			bundles.Add(new StyleBundle("~/sb-bundles/css").Include(
+				"~/Areas/Manage/Public/css/sb-admin-2.css",
+				"~/Areas/Manage/Public/vendor/fontawesome-free/css/all.min.css"));
+
+			BundleTable.EnableOptimizations = true;
 		}
 	}
 }
