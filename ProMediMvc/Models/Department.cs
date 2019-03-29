@@ -11,7 +11,7 @@ namespace ProMediMvc.Models
 	{
 		public int Id { get; set; }
 
-		[Column("Department")]
+		[Display(Name = "Department")]
 		[Required]
 		public string Name { get; set; }
 
@@ -30,6 +30,7 @@ namespace ProMediMvc.Models
 		public string Photo { get; set; }
 
 		[Required]
+		[Display(Name = "Description")]
 		public string Desc { get; set; }
 
 		[Required]

@@ -12,7 +12,7 @@ namespace ProMediMvc.Models
 		public int Id { get; set; }
 
 		[Required]
-		[Column("Category")]
+		[Display(Name = "Category")]
 		public string Name { get; set; }
 
 		public List<Blog> Blogs { get; set; }

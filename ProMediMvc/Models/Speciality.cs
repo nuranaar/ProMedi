@@ -11,13 +11,14 @@ namespace ProMediMvc.Models
 	{
 		public int Id { get; set; }
 
-		[Column("Speciality")]
+		[Display(Name ="Speciality")]
 		[Required]
 		public string Name { get; set; }
 
 		public List<SpecExpert> SpecExperts { get; set; }
 
-		
+		[Required]
+		[Display(Name ="Department")]
 		public int DepartmentId { get; set; }
 
 		public Department Department { get; set; }

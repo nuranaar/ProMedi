@@ -37,6 +37,7 @@ namespace ProMediMvc.Models
 		public string Slug { get; set; }
 
 		[Required]
+		[Display(Name = "Department")]
 		public int DepartmentId { get; set; }
 
 		public Department Department { get; set; }

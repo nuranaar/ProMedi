@@ -94,3 +94,6 @@ C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migration
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.ChangeAdminsModel1.resources
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.ChangeSpecExpert.resources
 C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.csprojAssemblyReference.cache
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddAttr.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddAttr1.resources
+C:\Users\ssule\source\repos\ProMediMvc\ProMediMvc\obj\Debug\ProMediMvc.Migrations.AddAttr2.resources

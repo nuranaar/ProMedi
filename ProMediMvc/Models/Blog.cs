@@ -18,6 +18,7 @@ namespace ProMediMvc.Models
 		public string Photo { get; set; }
 
 		[Required]
+		[Display(Name = "Description")]
 		public string Decs { get; set; }
 
 		[Column(TypeName = "datetime")]
@@ -28,18 +29,23 @@ namespace ProMediMvc.Models
 		[Required]
 		public string Text { get; set; }
 
-
+		[Required]
 		public string Slug { get; set; }
 
 		[Required]
+		[Display(Name = "Doctor")]
 		public int DoctorId { get; set; }
 
 		public Doctor Doctor { get; set; }
 
+		[Display(Name = "Category")]
+		[Required]
 		public int BlogCatId { get; set; }
 
 		public BlogCat BlogCat { get; set; }
 
+		[Display(Name = "Tag")]
+		[Required]
 		public int BlogTagId { get; set; }
 
 		public BlogTag BlogTag { get; set; }

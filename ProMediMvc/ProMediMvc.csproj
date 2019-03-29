@@ -207,6 +207,18 @@
     <Compile Include="Migrations\201903270925548_ChangeSpecExpert.Designer.cs">
       <DependentUpon>201903270925548_ChangeSpecExpert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903291613063_AddAttr.cs" />
+    <Compile Include="Migrations\201903291613063_AddAttr.Designer.cs">
+      <DependentUpon>201903291613063_AddAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903291620293_AddAttr1.cs" />
+    <Compile Include="Migrations\201903291620293_AddAttr1.Designer.cs">
+      <DependentUpon>201903291620293_AddAttr1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903291626437_AddAttr2.cs" />
+    <Compile Include="Migrations\201903291626437_AddAttr2.Designer.cs">
+      <DependentUpon>201903291626437_AddAttr2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\About.cs" />
     <Compile Include="Models\Expert.cs" />
@@ -2150,6 +2162,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903270925548_ChangeSpecExpert.resx">
       <DependentUpon>201903270925548_ChangeSpecExpert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903291613063_AddAttr.resx">
+      <DependentUpon>201903291613063_AddAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903291620293_AddAttr1.resx">
+      <DependentUpon>201903291620293_AddAttr1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903291626437_AddAttr2.resx">
+      <DependentUpon>201903291626437_AddAttr2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
